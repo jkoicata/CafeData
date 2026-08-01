@@ -5,6 +5,7 @@ from sklearn.model_selection import train_test_split
 
 from data import cargar_datos, separar_variables
 
+import pandas as pd
 
 def entrenar():
     df = cargar_datos()
@@ -25,7 +26,6 @@ def entrenar():
     print(f"MAE: {mae:.1f} tazas")
 
     # Predicción de ejemplo: día frío y lluvioso en Bogotá
-    import pandas as pd
     ejemplo = pd.DataFrame({"temperatura_c": [10.0], "llovio": [1]})
     print(f"Predicción para 10 °C con lluvia: {modelo.predict(ejemplo)[0]:.0f} tazas")
 
